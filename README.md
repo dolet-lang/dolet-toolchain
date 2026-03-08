@@ -1,5 +1,4 @@
 
-```markdown
 # 🛠️ Dolet Toolchain
 
 The official binary distribution for the **Dolet** programming language compiler infrastructure. This repository provides the essential backend tools required to transform Dolet source code into high-performance executables.
@@ -18,14 +17,13 @@ The binaries are hosted as Release Assets to maintain a lightweight repository.
 ## 🚀 Installation & Project Structure
 For the **Dolet Compiler** to function correctly, you must place the binaries inside a `tools` directory at the **root** of your compiler project:
 
-```text
+
 Dolet-Compiler-Root/
 ├── tools/                <-- Place clang.exe, lld-link.exe, mlir-translate.exe here
 ├── src/
 ├── packages/
 └── README.md
 
-```
 
 ## 🛡️ Governance
 
