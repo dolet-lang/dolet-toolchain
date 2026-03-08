@@ -1,38 +1,47 @@
 
+```markdown
 # 🛠️ Dolet Toolchain
 
-The official pre-built binary distribution for the **Dolet** programming language compiler infrastructure. This repository provides the essential backend tools required to transform Dolet source code into high-performance executables.
+The official binary distribution for the **Dolet** programming language compiler infrastructure. This repository provides the essential backend tools required to transform Dolet source code into high-performance executables.
 
-## 📦 Core Components
+## 📦 Version Information
+To ensure full compatibility with the **Dolet Bootstrap** compiler and ecosystem, this toolchain includes:
+* **LLVM/Clang/LLD**: `v21.1.8`
+* **MLIR**: `v22.0.0git`
+* **Target**: `x86_64-pc-windows-msvc`
 
-This toolchain includes the specific versions of LLVM and MLIR binaries synchronized with the **Dolet Bootstrap** compiler:
+## 📥 Downloads
+The binaries are hosted as Release Assets to maintain a lightweight repository.
+1. Navigate to the [Releases](https://github.com/dolet-lang/dolet-toolchain/releases) page.
+2. Download the package: **`dolet-toolchain-v21.1.8-win64.zip`**.
 
-* **`mlir-translate.exe`**: Responsible for converting Dolet's intermediate representation (MLIR) into LLVM IR.
-* **`clang.exe`**: Acts as the primary backend for machine code generation and C/C++ interoperability.
-* **`lld-link.exe`**: A high-performance linker used to produce final Windows executables (`.exe`).
+## 🚀 Installation & Project Structure
+For the **Dolet Compiler** to function correctly, you must place the binaries inside a `tools` directory at the **root** of your compiler project:
 
-## 🚀 Getting Started
-
-### 1. Installation
-
-To ensure consistency across the **dolet-core** and **ecosystem-devs** teams, please clone this repository into your local development environment:
-
-```bash
-git clone https://github.com/dolet-lang/dolet-toolchain.git
+```text
+Dolet-Compiler-Root/
+├── tools/                <-- Place clang.exe, lld-link.exe, mlir-translate.exe here
+├── src/
+├── packages/
+└── README.md
 
 ```
 
-### 2. Environment Setup
-
-Add the `bin` folder path to your system's **PATH** environment variable to allow the `dolet-bootstrap` compiler to invoke these tools globally.
-
 ## 🛡️ Governance
 
-This repository is managed under the following structure:
+* **Managed by**: `dolet-core` (Version control and updates).
+* **Utilized by**: `ecosystem-devs` (Building GPU, Audio, and CV modules).
 
-* **Parent Team**: `dolet-core` (Responsible for versioning and toolchain updates).
-* **Support Team**: `ecosystem-devs` (Utilizes the toolchain for building GPU, Audio, and CV modules).
+## ⚖️ License & Legal Notices
 
-## ⚠️ Version Consistency
+This toolchain distribution includes binaries from the **LLVM Project**.
 
-All contributors must use the binaries provided in this repository. Using external or mismatched versions of MLIR/LLVM may lead to incompatible IR generation or linking errors during the build process.
+* **LLVM/Clang/MLIR**: Licensed under the **Apache License v2.0 with LLVM Exceptions**.
+* **Third-Party Software**: These binaries are provided "as is" without any warranties.
+
+By using this toolchain, you agree to comply with the terms of the [LLVM License](https://llvm.org/LICENSE.txt). Dolet is an independent project and is not affiliated with the LLVM Foundation.
+
+---
+
+*Maintained by the [Dolet Organization*](https://www.google.com/search?q=https://github.com/dolet-lang)
+
